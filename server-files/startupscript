@@ -1,0 +1,10 @@
+#!/bin/sh
+
+JAR=server.jar
+
+while [ true ]; do
+  java -Xmx6g -jar $JAR
+  if [ $? -eq 0 ]; then
+    break
+  fi
+done
