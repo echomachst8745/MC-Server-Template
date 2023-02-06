@@ -6,7 +6,7 @@ JAR=server.jar
 MEMG=6
 
 while [ true ]; do
-  java -Xmx"$MEMG"g -jar $JAR nogui
+  java -Xmx"$MEMG"g -Xms"$MEMG"g -jar $JAR nogui
   if [ $? -eq 0 ]; then
     screen -XS backup-weekly-mc-server quit
     screen -XS backup-daily-mc-server quit
