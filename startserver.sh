@@ -1,5 +1,11 @@
 #!/bin/sh
 
+screen -S mc-server -Q select .
+if [ $? -eq 0 ]; then
+  echo "Server already running on screen session!"
+  exit 1
+fi
+
 screen -dmS mc-server
 screen -dmS autosave-mc-server
 
